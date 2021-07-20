@@ -1,0 +1,13 @@
+name: analytics_sdk
+version: 0.0.1
+description: abc
+
+repository: https://github.com/MichaelProjects/Analytics
+documentation: a
+
+environment:
+  sdk: '>=2.10.0 <3.0.0'
+dependencies:
+  sqflite: ^2.0.0+3
+dev_dependencies:
+  test: '>=1.15.0 <2.0.0'
