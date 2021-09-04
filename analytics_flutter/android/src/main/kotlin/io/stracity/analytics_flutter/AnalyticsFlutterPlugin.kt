@@ -17,15 +17,22 @@ class AnalyticsFlutterPlugin: FlutterPlugin, MethodCallHandler {
   private lateinit var channel : MethodChannel
 
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
-    channel = MethodChannel(flutterPluginBinding.binaryMessenger, "analytics_flutter")
+    channel = MethodChannel(flutterPluginBinding.binaryMessenger, "io.opensight")
     channel.setMethodCallHandler(this)
   }
 
   override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
-    if (call.method == "getPlatformVersion") {
-      result.success("Android ${android.os.Build.VERSION.RELEASE}")
-    } else {
-      result.notImplemented()
+    when (call.method){
+      "getPlatformVersion" -> {result.success("Android ${android.os.Build.VERSION.RELEASE}")}
+      "displaySize" -> {
+        val displayMetrics = DisplayMetrics()
+        var width = displayMetrics.widthPixels
+        var height = displayMetrics.heightPixels
+        result.success("${width}x${height}")
+      }
+      else -> {
+        result.notImplemented()
+      }
     }
   }
 
