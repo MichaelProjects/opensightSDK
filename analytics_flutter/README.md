@@ -1,4 +1,4 @@
-# Opensigh for Flutter
+# Opensight for Flutter
 
 ## Quickstart
 
