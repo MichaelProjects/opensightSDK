@@ -19,3 +19,4 @@ and now your app is connected with the opensight service.
 To get started with Opensight please, follow the instructions on http://opensight.io/docs
 
 ## issues or feedback
+Please file specific issues, bugs, or feature requests in our [issue tracker](https://github.com/MichaelProjects/opensightSDK/issues/new)
