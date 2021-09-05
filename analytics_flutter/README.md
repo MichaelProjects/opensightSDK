@@ -1,1 +1,21 @@
-# opensightSDK for Flutter
+# Opensigh for Flutter
+
+## Quickstart
+
+Move the generated config file from the Opensight Dashboard into the root folder of your app. Then add this code snipped to your app.
+
+```dart
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  OpensightSDK.initApp();
+  runApp(ExampleApp());
+}
+...
+```
+
+and now your app is connected with the opensight service.
+
+## Getting Started
+To get started with Opensight please, follow the instructions on http://opensight.io/docs
+
+## issues or feedback

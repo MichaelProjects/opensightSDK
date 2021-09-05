@@ -1,5 +1,4 @@
-import 'dart:async';
+library OpensightSDK;
 
-class OpensightSDK {
-  static Future<void> initApp() async {}
-}
+export 'src/app.dart' show OpensightSDK;
+export 'src/collection.dart' show Collection;

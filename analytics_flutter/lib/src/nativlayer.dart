@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'dart:developer' as developer;
 
 class NativeLayer {
+  /// with [NativeLayer] opensight calls native code, or functions (written in swift, kotlin).
   static const platform = MethodChannel("io.opensight");
 
   static Future<String> determineOs() async {
