@@ -8,7 +8,7 @@ class AnalyticsApiClient {
       Uri uri = Uri.parse("");
       Map<String, String> headers = {
         "Content-Type": "json",
-        "Authorization": "Bearer $token"
+        "Authorization": "$token"
       };
       var response = await http.post(uri, headers: headers, body: payload);
       if (response.statusCode != 202) {

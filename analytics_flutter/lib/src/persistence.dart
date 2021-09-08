@@ -1,7 +1,7 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class PresistencesLayer {
-  final String storeKey = "io.opensight";
+  final String storeKey = "io.opensight/";
 
   Future<bool> isNewUser() async {
     /// check if an exists for the given key below.
