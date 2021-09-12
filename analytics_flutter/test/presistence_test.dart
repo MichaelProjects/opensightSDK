@@ -1,4 +1,3 @@
-import 'package:analytics_flutter/src/nativlayer.dart';
 import 'package:analytics_flutter/src/persistence.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';

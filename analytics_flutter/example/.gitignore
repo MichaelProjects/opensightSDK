@@ -1,3 +1,6 @@
+# plugin ignores
+opensight_conf.json
+
 # Miscellaneous
 *.class
 *.log
