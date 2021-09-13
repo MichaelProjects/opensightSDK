@@ -11,7 +11,7 @@ public class SwiftAnalyticsFlutterPlugin: NSObject, FlutterPlugin {
     public func handle(_ call: FlutterMethodChannel, result: @escaping FlutterResult){
         switch(call.method) {
         case "getPlatformVersion":
-          result("IOS" + UIDevice.current.systemVersion)7
+          result("IOS" + UIDevice.current.systemVersion)
         case "dispalySize":
             result(getDisplaySize())
         }
