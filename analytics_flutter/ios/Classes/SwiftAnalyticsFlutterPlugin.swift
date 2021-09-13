@@ -15,11 +15,26 @@ public class SwiftAnalyticsFlutterPlugin: NSObject, FlutterPlugin {
         case "dispalySize":
             result(getDisplaySize())
         }
+        case "getOpensightConfig":
+            result(readConf())
         default:
         result("Not Implemented")
         
     }
 
+}
+
+public readConf(){
+    if let path = NSBundle.mainBundle().pathForResource("opensight_service", ofType: "json")
+    {
+        if let jsonData = NSData(contentsOfFile: path, options: .DataReadingMappedIfSafe, error: nil)
+        {
+            if let jsonResult: NSDictionary = NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers, error: nil) as? NSDictionary
+            {
+                return jsonResult
+            }
+         }
+    }
 }
 
 public getDisplaySize(){

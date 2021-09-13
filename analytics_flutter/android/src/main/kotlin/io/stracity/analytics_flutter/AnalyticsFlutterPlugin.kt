@@ -1,6 +1,8 @@
 package io.stracity.analytics_flutter
 
 import androidx.annotation.NonNull
+import android.content.Context
+
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.MethodCall
@@ -30,6 +32,10 @@ class AnalyticsFlutterPlugin: FlutterPlugin, MethodCallHandler {
         var height = displayMetrics.heightPixels
         result.success("${width}x${height}")
       }
+      "getOpensightConfig" -> {
+        var conf = loadServiceData("opensight_service.json")
+        return conf
+      }
       else -> {
         result.notImplemented()
       }
@@ -39,4 +45,16 @@ class AnalyticsFlutterPlugin: FlutterPlugin, MethodCallHandler {
   override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {
     channel.setMethodCallHandler(null)
   }
+}
+
+public fun loadServiceData(fileName: String): String? {
+  val jsonString: String
+  try {
+    val jsonString: String = File(fileName).readText(Charsets.UTF_8)
+    return jsonString
+  } catch (ioException: IOException) {
+      ioException.printStackTrace()
+      return null
+  }
+  return jsonString
 }
