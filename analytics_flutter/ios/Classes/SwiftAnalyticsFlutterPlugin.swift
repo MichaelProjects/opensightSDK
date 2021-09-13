@@ -11,20 +11,19 @@ public class SwiftAnalyticsFlutterPlugin: NSObject, FlutterPlugin {
     public func handle(_ call: FlutterMethodChannel, result: @escaping FlutterResult){
         switch(call.method) {
         case "getPlatformVersion":
-          result("IOS" + UIDevice.current.systemVersion)
+            result("IOS" + UIDevice.current.systemVersion)
         case "dispalySize":
             result(getDisplaySize())
-        }
         case "getOpensightConfig":
             result(readConf())
         default:
-        result("Not Implemented")
-        
+            result("Not Implemented")
+        }
     }
 
 }
 
-public readConf(){
+public func readConf(){
     if let path = NSBundle.mainBundle().pathForResource("opensight_service", ofType: "json")
     {
         if let jsonData = NSData(contentsOfFile: path, options: .DataReadingMappedIfSafe, error: nil)
@@ -37,7 +36,7 @@ public readConf(){
     }
 }
 
-public getDisplaySize(){
+public func getDisplaySize(){
     let screenSize: CGRect = UIScreen.main.bounds
     let screenWidth = screenSize.width
     let screenHeight = screenSize.height
