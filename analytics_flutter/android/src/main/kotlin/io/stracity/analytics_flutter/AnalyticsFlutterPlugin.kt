@@ -37,6 +37,10 @@ class AnalyticsFlutterPlugin: FlutterPlugin, MethodCallHandler {
         var conf: String = loadServiceData("opensight_service.json")
         result.success(conf)
       }
+      "getLangCode" -> {
+        val langCode: String? = getSystemLang();
+        result.success(langCode)
+      }
       else -> {
         result.notImplemented()
       }
@@ -57,4 +61,9 @@ public fun loadServiceData(fileName: String): String {
       return ""
   }
   return jsonString
+}
+
+public fun getSystemLang() -> String?{
+  val langCode: String? = Locale.getDefault().getLanguage() as String?
+  return langCode
 }
