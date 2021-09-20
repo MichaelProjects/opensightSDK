@@ -7,7 +7,7 @@ class OpensightSDK {
 
   static Future<void> initApp() async {
     _config_object = await NativeLayer.getConfig();
-    Collection data = Collection.collect();
+    Collection data = await Collection.collect();
     await AnalyticsApiClient().dispatchData(data.prepareToSend());
   }
 }

@@ -24,15 +24,47 @@ class NativeLayer {
   }
 
   static Future<String> determineDisplaysize() async {
-    String displaySize = "";
+    String displaySize = "None";
     try {
       final String result = await platform.invokeMethod("displaysize");
       displaySize = result;
-      print(result);
     } catch (e) {
       developer.log(e.toString());
     }
     return displaySize;
+  }
+
+  static Future<String> determineLangCode() async {
+    String langCode = "None";
+    try {
+      final String result = await platform.invokeMethod("getLangCode");
+      langCode = result;
+    } catch (e) {
+      developer.log(e.toString());
+    }
+    return langCode;
+  }
+
+  static Future<String> determineDeviceType() async {
+    String langCode = "None";
+    try {
+      final String result = await platform.invokeMethod("getDeviceType");
+      langCode = result;
+    } catch (e) {
+      developer.log(e.toString());
+    }
+    return langCode;
+  }
+
+  static Future<String> determineAppVersion() async {
+    String appVersion = "None";
+    try {
+      final String result = await platform.invokeMethod("getAppVersion");
+      appVersion = result;
+    } catch (e) {
+      developer.log(e.toString());
+    }
+    return appVersion;
   }
 
   static Future<Map> getConfig() async {
@@ -40,7 +72,6 @@ class NativeLayer {
     try {
       final Map result = await platform.invokeMethod("getOpensightConfig");
       displaySize = result;
-      print(result);
     } catch (e) {
       developer.log(e.toString());
     }

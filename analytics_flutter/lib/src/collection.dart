@@ -27,20 +27,28 @@ class Collection {
         os: await NativeLayer.determineOs(),
         deviceSize: await NativeLayer.determineDisplaysize(),
         new_user: false,
-        country: '',
+        country: await NativeLayer.determineLangCode(),
         last_session: 111,
-        device_type: '',
-        version: '');
+        device_type: await NativeLayer.determineDeviceType(),
+        version: await NativeLayer.determineAppVersion());
   }
 
-  prepareToSend() {
+  getTimeInFormat(DateTime time) {
+    var parts = time.toString().split(" ");
+    return "${parts[0]}T${parts[1].split(".")[0]}";
+  }
+
+  Map<String, dynamic> prepareToSend() {
     /// parse the data into the excpeted structure for the analytics_api
-    Map data = {
-      "creation_date": this.collectedTime.toString(),
+    Map<String, dynamic> data = {
+      "creation_time": getTimeInFormat(this.collectedTime),
       "os": this.os,
       "device_size": this.deviceSize,
-      "session_length": "",
-      "session_id": ""
+      "new_user": this.new_user,
+      "country": this.country,
+      "last_session": this.last_session,
+      "device_type": this.device_type,
+      "version": this.version
     };
     return data;
   }

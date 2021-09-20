@@ -3,7 +3,11 @@ package io.stracity.analytics_flutter
 import androidx.annotation.NonNull
 import android.content.Context
 import android.util.DisplayMetrics
+
+import android.os.Build
+
 import java.io.File
+import java.util.Locale
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.MethodCall
@@ -38,8 +42,16 @@ class AnalyticsFlutterPlugin: FlutterPlugin, MethodCallHandler {
         result.success(conf)
       }
       "getLangCode" -> {
-        val langCode: String? = getSystemLang();
+        val langCode: String? = getSystemLang()
         result.success(langCode)
+      }
+      "getAppVersion" -> {
+        val version: String? = getAppVersion()
+        result.success(version)
+      }
+      "getDeviceType" -> {
+        val deviceType: String = getPhoneDeviceName()
+        result.success(deviceType)
       }
       else -> {
         result.notImplemented()
@@ -63,7 +75,16 @@ public fun loadServiceData(fileName: String): String {
   return jsonString
 }
 
-public fun getSystemLang() -> String?{
-  val langCode: String? = Locale.getDefault().getLanguage() as String?
+public fun getSystemLang():String{
+  val langCode: String = Locale.getDefault().getLanguage() as String
   return langCode
+}
+public fun getAppVersion():String {
+  val version:String = Build.VERSION.RELEASE
+  return version
+}
+
+fun getPhoneDeviceName():String {
+  val model = Build.MODEL // returns model name
+  return model;
 }
