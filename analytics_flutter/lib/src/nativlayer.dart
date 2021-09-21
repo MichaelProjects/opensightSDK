@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:developer' as developer;
 
@@ -67,14 +68,17 @@ class NativeLayer {
     return appVersion;
   }
 
-  static Future<Map> getConfig() async {
-    Map displaySize = {};
+  static Future<String> getConfig() async {
+    String config = "";
     try {
-      final Map result = await platform.invokeMethod("getOpensightConfig");
-      displaySize = result;
+      final String result = await platform.invokeMethod("getOpensightConfig");
+      if (!result.startsWith("{")) {
+        throw (result);
+      }
+      config = result;
     } catch (e) {
-      developer.log(e.toString());
+      print(e);
     }
-    return displaySize;
+    return config;
   }
 }
