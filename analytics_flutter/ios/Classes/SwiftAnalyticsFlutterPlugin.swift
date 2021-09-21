@@ -12,22 +12,14 @@ public class SwiftAnalyticsFlutterPlugin: NSObject, FlutterPlugin {
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         switch call.method {
         case "getPlatformVersion":
-            result("getPlatformVersion")
+            result(String(format: "IOS %1$@", UIDevice.current.systemVersion))
             break;
         case "displaysize":
             result(getDisplaySize())
             break;
         case "getOpensightConfig":
-            result(loadConfig())
-            break
-        case "getLangCode":
-            result(getLangCode())
-            break
-        case "getAppVersion":
-            result(getBuildAppVersion())
-            break
-        case "getDeviceType":
-            result(getDeviceType())
+            result(readConf())
+            break;
         default:
             result("Not Implemented")
         }
@@ -154,17 +146,17 @@ public extension UIDevice {
             case "i386", "x86_64":                                return "Simulator \(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "iOS"))"
             default:                                              return identifier
             }
-            #elseif os(tvOS)
-            switch identifier {
-            case "AppleTV5,3": return "Apple TV 4"
-            case "AppleTV6,2": return "Apple TV 4K"
-            case "i386", "x86_64": return "Simulator \(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "tvOS"))"
-            default: return identifier
-            }
-            #endif
+        } else {
+            print("Could not find opensight_service.json
         }
+        return conf
+    }
 
-        return mapToDevice(identifier: identifier)
-    }()
-
+    private func getDisplaySize() -> String {
+        let screenSize: CGRect = UIScreen.main.bounds
+        let screenWidth = screenSize.width
+        let screenHeight = screenSize.height
+        return String(format: "%2$@ + %1$@", screenWidth, screenHeight)
+    }
+    
 }
