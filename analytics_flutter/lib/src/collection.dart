@@ -5,7 +5,7 @@ class Collection {
   /// [Collection] contains all the needed data that will be sendet to the analtics_api.
   final DateTime collectedTime = DateTime.now();
   String os;
-  String deviceSize; // width x height
+  String deviceSize;
   bool new_user;
   String country;
   int last_session;
