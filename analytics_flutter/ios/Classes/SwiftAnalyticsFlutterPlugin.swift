@@ -64,7 +64,7 @@ public func loadConfig() -> String{
     if let jsonURL = Bundle.main.url(forResource: "opensight_service", withExtension: "json"){
     let jsonData = try? Data(contentsOf: jsonURL)
     conf = jsonData as! String
-    }
+    } 
     return conf
 }
 
