@@ -67,13 +67,13 @@ class NativeLayer {
     return appVersion;
   }
 
-  static Future<Map> getConfig() async {
-    Map displaySize = {};
+  static Future<String> getConfig() async {
+    String displaySize = "";
     try {
-      final Map result = await platform.invokeMethod("getOpensightConfig");
+      final String result = await platform.invokeMethod("getOpensightConfig");
       displaySize = result;
     } catch (e) {
-      developer.log(e.toString());
+      print(e);
     }
     return displaySize;
   }

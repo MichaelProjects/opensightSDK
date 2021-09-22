@@ -7,6 +7,7 @@ import android.util.DisplayMetrics
 import android.os.Build
 
 import java.io.File
+
 import java.util.Locale
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin
@@ -70,7 +71,7 @@ public fun loadServiceData(fileName: String): String {
     val jsonString: String = File(fileName).readText(Charsets.UTF_8)
     return jsonString
   } catch (error: Exception) {
-      return ""
+      return "Could not find Config"
   }
   return jsonString
 }
