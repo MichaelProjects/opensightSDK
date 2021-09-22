@@ -153,7 +153,6 @@ public extension UIDevice {
             case "AudioAccessory5,1":                             return "HomePod mini"
             case "i386", "x86_64":                                return "Simulator \(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "iOS"))"
             default:                                              return identifier
-<<<<<<< HEAD
             }
             #elseif os(tvOS)
             switch identifier {
@@ -161,8 +160,6 @@ public extension UIDevice {
             case "AppleTV6,2": return "Apple TV 4K"
             case "i386", "x86_64": return "Simulator \(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "tvOS"))"
             default: return identifier
-=======
->>>>>>> c2e5dd163c7838631a5044058a937c0e70703e14
             }
             #endif
         }
