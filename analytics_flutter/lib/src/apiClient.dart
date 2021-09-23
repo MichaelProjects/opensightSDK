@@ -1,15 +1,15 @@
 import 'dart:convert';
 
+import 'package:analytics_flutter/src/conf.dart';
 import 'package:http/http.dart' as http;
 import 'dart:developer' as developer;
 
 class AnalyticsApiClient {
-  Future dispatchData(Map<String, dynamic> payload) async {
-    String token = "";
+  Future dispatchData(Map<String, dynamic> payload, Config config) async {
     print(payload);
     try {
       Uri uri = Uri.parse(
-          "http://apm.stackblog.io:28018/analytic/1914806b-dcb3-4f1e-a24b-1943093961ba/entry");
+          "${config.analytics_api}/analytic/1914806b-dcb3-4f1e-a24b-1943093961ba/entry");
       var response = await http.post(uri, body: jsonEncode(payload));
       print(response.body);
       if (response.statusCode != 202) {

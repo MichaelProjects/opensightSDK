@@ -3,8 +3,10 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/analytics_flutter/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/analytics_flutter/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/analytics_flutter/build" />
+      <excludeFolder url="file://$MODULE_DIR$/analytics_flutter/example/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/analytics_flutter/example/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/analytics_flutter/example/build" />
     </content>

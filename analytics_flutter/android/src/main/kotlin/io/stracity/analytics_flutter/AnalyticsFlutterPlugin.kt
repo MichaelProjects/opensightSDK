@@ -3,7 +3,12 @@ package io.stracity.analytics_flutter
 import androidx.annotation.NonNull
 import android.content.Context
 import android.util.DisplayMetrics
+import android.content.res.AssetManager;
 
+import java.io.BufferedReader
+import java.io.IOException
+import java.io.InputStream
+import java.io.InputStreamReader
 import android.os.Build
 
 import java.io.File
@@ -66,14 +71,11 @@ class AnalyticsFlutterPlugin: FlutterPlugin, MethodCallHandler {
 }
 
 public fun loadServiceData(fileName: String): String {
-  val jsonString: String
-  try {
-    val jsonString: String = File(fileName).readText(Charsets.UTF_8)
-    return jsonString
-  } catch (error: Exception) {
-      return "Could not find Config"
-  }
-  return jsonString
+  var string: String = ""
+  val stringBuilder = StringBuilder()
+  //var manager: AssetManager = AssetManager()
+  //print(manager.list())
+  return ""
 }
 
 public fun getSystemLang():String{

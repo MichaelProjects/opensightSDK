@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22d2cc35-5c18-499e-bb1f-3919c39a98d8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/analytics_sdk.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/analytics_sdk.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/analytics_flutter/android/src/main/kotlin/io/stracity/analytics_flutter/AnalyticsFlutterPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/analytics_flutter/android/src/main/kotlin/io/stracity/analytics_flutter/AnalyticsFlutterPlugin.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analytics_flutter/lib/src/collection.dart" beforeDir="false" afterPath="$PROJECT_DIR$/analytics_flutter/lib/src/collection.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analytics_flutter/example/android/app/opensight_service.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analytics_flutter/example/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/analytics_flutter/example/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analytics_flutter/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/analytics_flutter/example/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analytics_flutter/ios/Classes/SwiftAnalyticsFlutterPlugin.swift" beforeDir="false" afterPath="$PROJECT_DIR$/analytics_flutter/ios/Classes/SwiftAnalyticsFlutterPlugin.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,5 +75,9 @@
       <screen x="0" y="0" width="2560" height="1032" />
     </state>
     <state x="1340" y="161" width="998" height="708" key="SettingsEditor/0.0.2560.1032/2560.-446.1080.1872@0.0.2560.1032" timestamp="1632153139403" />
+    <state x="1656" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1632429073955">
+      <screen x="0" y="0" width="2560" height="1032" />
+    </state>
+    <state x="1656" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1032/2560.-446.1080.1872@0.0.2560.1032" timestamp="1632429073955" />
   </component>
 </project>

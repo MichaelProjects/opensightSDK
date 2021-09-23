@@ -4,7 +4,12 @@ import 'package:flutter/material.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  OpensightSDK.initApp();
+  OpensightSDK.initApp({
+    "url": "https://apm.stackblog.io:28018",
+    "name": "stackblog",
+    "api_key": "5305728986743839588",
+    "package_name": "io.stackblog"
+  });
   runApp(ExampleApp());
 }
 
