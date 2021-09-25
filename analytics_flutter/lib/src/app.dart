@@ -1,7 +1,6 @@
 import 'package:analytics_flutter/src/apiClient.dart';
 import 'package:analytics_flutter/src/collection.dart';
 import 'package:analytics_flutter/src/conf.dart';
-import 'package:analytics_flutter/src/nativlayer.dart';
 
 class OpensightSDK {
   static Config _config_object = Config.def();

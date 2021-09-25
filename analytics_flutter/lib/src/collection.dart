@@ -1,5 +1,4 @@
 import 'nativlayer.dart';
-import 'package:uuid/uuid.dart';
 
 class Collection {
   /// [Collection] contains all the needed data that will be sendet to the analtics_api.

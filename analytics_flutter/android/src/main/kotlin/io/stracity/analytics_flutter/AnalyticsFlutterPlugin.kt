@@ -1,5 +1,6 @@
 package io.stracity.analytics_flutter
 
+import android.app.Activity
 import androidx.annotation.NonNull
 import android.content.Context
 import android.util.DisplayMetrics
@@ -16,32 +17,44 @@ import java.io.File
 import java.util.Locale
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin
+import io.flutter.embedding.engine.plugins.activity.ActivityAware
+import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
+import io.flutter.plugin.common.PluginRegistry.Registrar
+
 
 /** AnalyticsFlutterPlugin */
-class AnalyticsFlutterPlugin: FlutterPlugin, MethodCallHandler {
+class AnalyticsFlutterPlugin: FlutterPlugin, MethodCallHandler, ActivityAware  {
   /// The MethodChannel that will the communication between Flutter and native Android
   ///
   /// This local reference serves to register the plugin with the Flutter Engine and unregister it
   /// when the Flutter Engine is detached from the Activity
   private lateinit var channel : MethodChannel
+  private lateinit var activity:Activity
+  private lateinit var context: Context
 
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
     channel = MethodChannel(flutterPluginBinding.binaryMessenger, "io.opensight")
     channel.setMethodCallHandler(this)
+    this.context = flutterPluginBinding.applicationContext
+  }
+
+  companion object {
+    @JvmStatic
+    fun registerWith(registrar: Registrar) {
+      val channel = MethodChannel(registrar.messenger(), "io.opensight")
+      channel.setMethodCallHandler(AnalyticsFlutterPlugin())
+    }
   }
 
   override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
     when (call.method){
       "getPlatformVersion" -> {result.success("Android ${android.os.Build.VERSION.RELEASE}")}
-      "displaySize" -> {
-        val displayMetrics = DisplayMetrics()
-        var width = displayMetrics.widthPixels
-        var height = displayMetrics.heightPixels
-        result.success("${width}x${height}")
+      "displaysize" -> {
+        result.success(getDisplaySize(activity))
       }
       "getOpensightConfig" -> {
         var conf: String = loadServiceData("opensight_service.json")
@@ -64,10 +77,27 @@ class AnalyticsFlutterPlugin: FlutterPlugin, MethodCallHandler {
       }
     }
   }
-
   override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {
     channel.setMethodCallHandler(null)
   }
+  override fun onDetachedFromActivity() {}
+  override fun onReattachedToActivityForConfigChanges(binding: ActivityPluginBinding) {
+    onAttachedToActivity(binding)
+  }
+  override fun onAttachedToActivity(binding: ActivityPluginBinding) {
+    this.activity = binding.activity
+  }
+  override fun onDetachedFromActivityForConfigChanges() {}
+}
+
+// here are the util classes, where the plugin gets the information from
+
+public fun getDisplaySize(activity: Activity): String {
+  val displayMetrics = DisplayMetrics()
+  activity.windowManager.defaultDisplay.getMetrics(displayMetrics)
+  var width = displayMetrics.widthPixels
+  var height = displayMetrics.heightPixels
+  return "${width}x${height}"
 }
 
 public fun loadServiceData(fileName: String): String {
