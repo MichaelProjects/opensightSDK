@@ -18,7 +18,7 @@ public class SwiftAnalyticsFlutterPlugin: NSObject, FlutterPlugin {
             result(getDisplaySize())
             break;
         case "getOpensightConfig":
-            result(loadConfig())
+            result("")
             break
         case "getLangCode":
             result(getLangCode())
@@ -56,20 +56,6 @@ public func getDisplaySize() -> String {
     let screenHeight = screenSize.height
     return "\(screenWidth)x\(screenHeight)"
 }
- 
-
-public func loadConfig() -> String{
-    var conf: String = "Could not find Config"
-
-    if let jsonURL = Bundle.main.url(forResource: "opensight_service", withExtension: "json"){
-    print(jsonURL)
-    let jsonData = try? Data(contentsOf: jsonURL)
-    conf = jsonData as! String
-    } 
-    return conf
-}
-
-
 
 
 

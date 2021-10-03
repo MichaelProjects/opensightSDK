@@ -1,3 +1,5 @@
+import 'package:analytics_flutter/src/persistence.dart';
+
 import 'nativlayer.dart';
 
 class Collection {
@@ -25,7 +27,7 @@ class Collection {
     return Collection(
         os: await NativeLayer.determineOs(),
         deviceSize: await NativeLayer.determineDisplaysize(),
-        new_user: false,
+        new_user: await PresistencesLayer().isNewUser(),
         country: await NativeLayer.determineLangCode(),
         last_session: 111,
         device_type: await NativeLayer.determineDeviceType(),

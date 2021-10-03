@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:analytics_flutter/src/session.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class PresistencesLayer {
@@ -18,5 +21,23 @@ class PresistencesLayer {
   Future<void> storeUserState(bool isNew) async {
     SharedPreferences pref = await SharedPreferences.getInstance();
     pref.setBool(storeKey + "isNewUser", isNew);
+  }
+
+  Future<void> storeSession(Session session) async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    var encodedData = session.toJson().toString();
+    pref.setString(storeKey + "sessionData", encodedData);
+  }
+
+  Future<Map?> loadSessions() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    String? data = pref.getString(storeKey + "sessionData");
+    Map decodedData = jsonDecode(data!);
+    return decodedData;
+  }
+
+  Future<void> removeSession() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    pref.remove(storeKey + "sessionData");
   }
 }
