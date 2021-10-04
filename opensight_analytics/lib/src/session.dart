@@ -1,6 +1,6 @@
 import 'dart:isolate';
 
-import 'package:analytics_flutter/src/persistence.dart';
+import '/src/persistence.dart';
 import 'package:flutter_isolate/flutter_isolate.dart';
 
 class Session {

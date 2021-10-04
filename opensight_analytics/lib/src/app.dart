@@ -1,7 +1,7 @@
-import 'package:analytics_flutter/src/apiClient.dart';
-import 'package:analytics_flutter/src/collection.dart';
-import 'package:analytics_flutter/src/conf.dart';
-import 'package:analytics_flutter/src/session.dart';
+import '/src/apiClient.dart';
+import '/src/collection.dart';
+import '/src/conf.dart';
+import '/src/session.dart';
 
 class OpensightSDK {
   /// [OpensightSDK] is the public api for this plugin, it is simple to implement just call [OpensightSDK.initApp] and the function takes your config.
