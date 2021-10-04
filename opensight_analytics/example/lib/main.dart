@@ -3,7 +3,7 @@ import 'package:opensight_analytics/analytics_flutter.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  OpensightSDK.initApp({
+  Opensight_Analytics.initApp({
     "url": "http://apm.stackblog.io:28018",
     "name": "stackblog",
     "api_key": "5305728986743839588",

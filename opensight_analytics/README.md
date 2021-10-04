@@ -1,15 +1,22 @@
-# opensight_analytics
+# Opensight for Flutter
 
-A new flutter plugin project.
+## Quickstart
+
+Move the generated config file from the Opensight Dashboard into the root folder of your app. Then add this code snipped to your app.
+
+```dart
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  Opensight_Analytics.initApp({config data});
+  runApp(ExampleApp());
+}
+...
+```
+
+and now your app is connected with the opensight service.
 
 ## Getting Started
+To get started with Opensight please, follow the instructions on http://opensight.io/docs
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
+## issues or feedback
+Please file specific issues, bugs, or feature requests in our [issue tracker](https://github.com/MichaelProjects/opensightSDK/issues/new)
