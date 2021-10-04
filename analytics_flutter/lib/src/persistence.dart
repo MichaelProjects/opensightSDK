@@ -25,15 +25,14 @@ class PresistencesLayer {
 
   Future<void> storeSession(Session session) async {
     SharedPreferences pref = await SharedPreferences.getInstance();
-    var encodedData = session.toJson().toString();
+    String encodedData = session.toJson().toString();
     pref.setString(storeKey + "sessionData", encodedData);
   }
 
-  Future<Map?> loadSessions() async {
+  Future<String?> loadSessions() async {
     SharedPreferences pref = await SharedPreferences.getInstance();
     String? data = pref.getString(storeKey + "sessionData");
-    Map decodedData = jsonDecode(data!);
-    return decodedData;
+    return data;
   }
 
   Future<void> removeSession() async {

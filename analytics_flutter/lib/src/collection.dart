@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:analytics_flutter/src/persistence.dart';
 
 import 'nativlayer.dart';
@@ -29,7 +31,7 @@ class Collection {
         deviceSize: await NativeLayer.determineDisplaysize(),
         new_user: await PresistencesLayer().isNewUser(),
         country: await NativeLayer.determineLangCode(),
-        last_session: 111,
+        last_session: await loadSessionData(),
         device_type: await NativeLayer.determineDeviceType(),
         version: await NativeLayer.determineAppVersion());
   }
@@ -52,5 +54,16 @@ class Collection {
       "version": this.version
     };
     return data;
+  }
+}
+
+loadSessionData() async {
+  String? data = await PresistencesLayer().loadSessions();
+  print("Output: $data");
+  if (data != null) {
+    Map decodecData = jsonDecode(data);
+    return decodecData["length"] as int;
+  } else {
+    return 0;
   }
 }

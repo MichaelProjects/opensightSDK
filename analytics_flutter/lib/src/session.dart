@@ -1,10 +1,9 @@
+import 'dart:isolate';
+
+import 'package:analytics_flutter/src/persistence.dart';
+
 class Session {
-  DateTime takenTime = DateTime.now();
   int length = 0;
-
-  Session(int length);
-
-  void startTracking() {}
 
   void increaseLength() {
     length += 10;
@@ -12,8 +11,16 @@ class Session {
 
   Map toJson() {
     return {
-      "takenTime": takenTime,
       "length": length,
     };
+  }
+}
+
+startTracking(SendPort sendPort) async {
+  var session = new Session();
+  while (true) {
+    Future.delayed(Duration(seconds: 10));
+    session.increaseLength();
+    await PresistencesLayer().storeSession(session);
   }
 }
