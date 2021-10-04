@@ -57,12 +57,11 @@ class Collection {
   }
 }
 
-loadSessionData() async {
-  String? data = await PresistencesLayer().loadSessions();
+Future<int> loadSessionData() async {
+  int? data = await PresistencesLayer().loadSessions();
   print("Output: $data");
   if (data != null) {
-    Map decodecData = jsonDecode(data);
-    return decodecData["length"] as int;
+    return data;
   } else {
     return 0;
   }

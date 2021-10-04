@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22d2cc35-5c18-499e-bb1f-3919c39a98d8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analytics_flutter/android/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/analytics_flutter/android/.classpath" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analytics_flutter/android/.settings/org.eclipse.buildship.core.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/analytics_flutter/android/.settings/org.eclipse.buildship.core.prefs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analytics_flutter/android/src/main/kotlin/io/stracity/analytics_flutter/AnalyticsFlutterPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/analytics_flutter/android/src/main/kotlin/io/stracity/analytics_flutter/AnalyticsFlutterPlugin.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analytics_flutter/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/analytics_flutter/example/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analytics_flutter/lib/src/apiClient.dart" beforeDir="false" afterPath="$PROJECT_DIR$/analytics_flutter/lib/src/apiClient.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analytics_flutter/lib/src/app.dart" beforeDir="false" afterPath="$PROJECT_DIR$/analytics_flutter/lib/src/app.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analytics_flutter/lib/src/collection.dart" beforeDir="false" afterPath="$PROJECT_DIR$/analytics_flutter/lib/src/collection.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analytics_flutter/lib/src/nativlayer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/analytics_flutter/lib/src/nativlayer.dart" afterDir="false" />
-    </list>
+    <list default="true" id="22d2cc35-5c18-499e-bb1f-3919c39a98d8" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

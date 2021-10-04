@@ -25,13 +25,13 @@ class PresistencesLayer {
 
   Future<void> storeSession(Session session) async {
     SharedPreferences pref = await SharedPreferences.getInstance();
-    String encodedData = session.toJson().toString();
-    pref.setString(storeKey + "sessionData", encodedData);
+    int encodedData = session.store();
+    pref.setInt(storeKey + "sessionData", encodedData);
   }
 
-  Future<String?> loadSessions() async {
+  Future<int?> loadSessions() async {
     SharedPreferences pref = await SharedPreferences.getInstance();
-    String? data = pref.getString(storeKey + "sessionData");
+    int? data = pref.getInt(storeKey + "sessionData");
     return data;
   }
 

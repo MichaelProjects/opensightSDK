@@ -9,6 +9,10 @@ class Session {
     length += 10;
   }
 
+  int store() {
+    return length;
+  }
+
   Map toJson() {
     return {
       "length": length,
@@ -19,7 +23,7 @@ class Session {
 startTracking(SendPort sendPort) async {
   var session = new Session();
   while (true) {
-    Future.delayed(Duration(seconds: 10));
+    await Future.delayed(Duration(seconds: 10));
     session.increaseLength();
     await PresistencesLayer().storeSession(session);
   }
