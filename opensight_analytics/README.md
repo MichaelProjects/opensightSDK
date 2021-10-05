@@ -16,6 +16,8 @@ void main() {
 and now your app is connected with the opensight service.
 
 ## Getting Started
+Documentation comming soon ->
+
 To get started with Opensight please, follow the instructions on http://opensight.io/docs
 
 ## issues or feedback

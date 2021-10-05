@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import '/src/conf.dart';
-import '/src/utils.dart';
+import 'conf.dart';
+import 'utils.dart';
 import 'package:http/http.dart' as http;
 
 class AnalyticsApiClient {

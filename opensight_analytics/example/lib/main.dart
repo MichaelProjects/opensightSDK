@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:opensight_analytics/analytics_flutter.dart';
+import 'package:opensight_analytics/opensight_analytics.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  Opensight_Analytics.initApp({
-    "url": "http://apm.stackblog.io:28018",
+  OpensightAnalytics.initApp({
+    "url": "here your url",
     "name": "stackblog",
-    "api_key": "5305728986743839588",
+    "api_key": "hereyourkey",
     "package_name": "io.stackblog"
   });
   runApp(ExampleApp());

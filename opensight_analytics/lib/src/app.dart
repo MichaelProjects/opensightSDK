@@ -1,10 +1,10 @@
-import '/src/apiClient.dart';
-import '/src/collection.dart';
-import '/src/conf.dart';
-import '/src/session.dart';
+import 'apiClient.dart';
+import 'collection.dart';
+import 'conf.dart';
+import 'session.dart';
 
-class Opensight_Analytics {
-  /// [Opensight_Analytics] is the public api for this plugin, it is simple to implement just call [OpensightSDK.initApp] and the function takes your config.
+class OpensightAnalytics {
+  /// [OpensightAnalytics] is the public api for this plugin, it is simple to implement just call [OpensightSDK.initApp] and the function takes your config.
   ///
   /// example:
   ///
