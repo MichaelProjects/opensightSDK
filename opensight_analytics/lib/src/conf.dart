@@ -18,6 +18,6 @@ class Config {
     );
   }
   factory Config.def() {
-    return Config("0.0.0.0", "123", "default", "123", "io.default");
+    return Config("localhost:28018", "123", "default", "123", "io.default");
   }
 }

@@ -36,7 +36,11 @@ class PresistencesLayer {
   }
 
   Future<void> removeSession() async {
-    SharedPreferences pref = await SharedPreferences.getInstance();
-    pref.remove(storeKey + "sessionData");
+    try {
+      SharedPreferences pref = await SharedPreferences.getInstance();
+      pref.remove(storeKey + "sessionData");
+    } catch (ex) {
+      print("Nothing to clear");
+    }
   }
 }

@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:opensight_analytics/src/persistence.dart';
 
 import 'conf.dart';
 import 'utils.dart';
@@ -9,10 +10,13 @@ class AnalyticsApiClient {
     print(payload);
     compressData(payload);
     try {
-      Uri uri = Uri.parse(
-          "${config.analytics_api}/analytic/1914806b-dcb3-4f1e-a24b-1943093961ba/entry");
+      Uri uri =
+          Uri.parse("${config.analytics_api}/analytic/${config.app_id}/entry");
       var response = await http.post(uri, body: jsonEncode(payload));
       print(response.body);
+      if (response.statusCode == 202) {
+        await PresistencesLayer().removeSession();
+      }
       if (response.statusCode != 202) {
         print("Error while connection to analytic_api");
         throw "could not connect to analytic api server";
