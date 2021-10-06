@@ -7,7 +7,13 @@ Move the generated config file from the Opensight Dashboard into the root folder
 ```dart
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  Opensight_Analytics.initApp({config data});
+  OpensightAnalytics.initApp({
+  "url": "http://example.host",
+  "app_id": "application_id",
+  "name": "name of your app",
+  "token": "your_application_token",
+  "package_name": "io.app"
+  });
   runApp(ExampleApp());
 }
 ...

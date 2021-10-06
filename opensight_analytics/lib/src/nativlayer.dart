@@ -31,7 +31,6 @@ class NativeLayer {
     } catch (e) {
       developer.log(e.toString());
     }
-    print(displaySize);
     return displaySize;
   }
 

@@ -5,14 +5,14 @@ class Config {
   final String? name;
   final String? package_name;
 
-  Config(this.analytics_api, this.token, this.app_id, this.name,
+  Config(this.analytics_api, this.app_id, this.token, this.name,
       this.package_name);
 
   factory Config.fromJson(Map data) {
     return Config(
       data["url"],
       data["app_id"],
-      data["api_key"],
+      data["token"],
       data["name"],
       data["package_name"],
     );

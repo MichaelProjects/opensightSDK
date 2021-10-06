@@ -7,11 +7,11 @@ import 'package:http/http.dart' as http;
 
 class AnalyticsApiClient {
   Future dispatchData(Map<String, dynamic> payload, Config config) async {
-    print(payload);
     compressData(payload);
     try {
       Uri uri =
           Uri.parse("${config.analytics_api}/analytic/${config.app_id}/entry");
+      print(uri);
       var response = await http.post(uri, body: jsonEncode(payload));
       print(response.body);
       if (response.statusCode == 202) {
@@ -22,7 +22,6 @@ class AnalyticsApiClient {
         throw "could not connect to analytic api server";
       }
     } catch (e) {
-      print("afb");
       print(e.toString());
     }
   }
