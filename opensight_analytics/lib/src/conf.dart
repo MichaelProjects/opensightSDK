@@ -1,12 +1,12 @@
 class Config {
-  final String? analytics_api;
-  final String? app_id;
+  final String? analyticsApi;
+  final String? appId;
   final String? token;
   final String? name;
-  final String? package_name;
+  final String? packageName;
 
-  Config(this.analytics_api, this.app_id, this.token, this.name,
-      this.package_name);
+  Config(
+      this.analyticsApi, this.appId, this.token, this.name, this.packageName);
 
   factory Config.fromJson(Map data) {
     return Config(

@@ -73,7 +73,7 @@ class NativeLayer {
       final String result = await platform.invokeMethod("getOpensightConfig");
       displaySize = result;
     } catch (e) {
-      print(e);
+      developer.log(e.toString());
     }
     return displaySize;
   }

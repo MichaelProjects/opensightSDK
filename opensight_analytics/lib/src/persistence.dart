@@ -1,14 +1,12 @@
-import 'dart:convert';
-
-import '/src/session.dart';
+import 'session.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class PresistencesLayer {
   final String storeKey = "io.opensight/";
 
+  /// check if an exists for the given key below.
+  /// if so it returns the needed value.
   Future<bool> isNewUser() async {
-    /// check if an exists for the given key below.
-    /// if so it returns the needed value.
     bool isNew = true;
     SharedPreferences pref = await SharedPreferences.getInstance();
     var result = pref.getBool(storeKey + "isNewUser");
@@ -36,11 +34,7 @@ class PresistencesLayer {
   }
 
   Future<void> removeSession() async {
-    try {
-      SharedPreferences pref = await SharedPreferences.getInstance();
-      pref.remove(storeKey + "sessionData");
-    } catch (ex) {
-      print("Nothing to clear");
-    }
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    pref.remove(storeKey + "sessionData");
   }
 }

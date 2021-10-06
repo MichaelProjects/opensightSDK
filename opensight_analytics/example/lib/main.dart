@@ -10,13 +10,15 @@ void main() {
     "token": "your_application_token",
     "package_name": "io.app"
   });
-  runApp(ExampleApp());
+  runApp(const ExampleApp());
 }
 
 class ExampleApp extends StatelessWidget {
+  const ExampleApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: Scaffold(body: Home()));
+    return const MaterialApp(home: Scaffold(body: Home()));
   }
 }
 
@@ -25,6 +27,6 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(child: Center(child: Text("Opensight Demo App")));
+    return const Center(child: Text("Opensight Demo App"));
   }
 }

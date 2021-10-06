@@ -1,3 +1,6 @@
+## 0.0.4
+removed linter warnings and added auth header for backend
+
 ## 0.0.3
 fixed parsing error
 

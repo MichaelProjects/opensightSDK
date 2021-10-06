@@ -1,4 +1,4 @@
-import 'apiClient.dart';
+import 'api_client.dart';
 import 'collection.dart';
 import 'conf.dart';
 import 'session.dart';
@@ -10,13 +10,12 @@ class OpensightAnalytics {
   ///
   /// Map config_data = {add your config data here}
   /// Opensight_Analytics.initApp(config_data)
-  static Config _config_object = Config.def();
+  static Config configObject = Config.def();
 
   static Future<void> initApp(Map config) async {
-    _config_object = Config.fromJson(config);
+    configObject = Config.fromJson(config);
     Collection data = await Collection.collect();
-    await AnalyticsApiClient()
-        .dispatchData(data.prepareToSend(), _config_object);
+    await AnalyticsApiClient().dispatchData(data.prepareToSend(), configObject);
     tracking();
   }
 }

@@ -16,11 +16,11 @@ class Session {
   }
 }
 
+/// writes every 10 seconds the count of length down.
 startTracking(SendPort sendPort) async {
-  /// writes every 10 seconds the count of length down.
-  var session = new Session();
+  var session = Session();
   while (true) {
-    await Future.delayed(Duration(seconds: 10));
+    await Future.delayed(const Duration(seconds: 10));
     session.increaseLength();
     await PresistencesLayer().storeSession(session);
   }
@@ -32,6 +32,8 @@ Future sendReceive(SendPort port, msg) {
   return response.first;
 }
 
+/// if [tracking] is called, the function will create an isolate and
+/// start an endless loop to write down the past time
 tracking() async {
   ReceivePort receivePort = ReceivePort();
   await FlutterIsolate.spawn(startTracking, receivePort.sendPort);
