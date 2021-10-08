@@ -67,7 +67,7 @@ class OpensightAnalyticsPlugin: FlutterPlugin, MethodCallHandler, ActivityAware 
         result.success(langCode)
       }
       "getAppVersion" -> {
-        val version: String? = getAppVersion()
+        val version: String? = getAppVersion(context)
         result.success(version)
       }
       "getDeviceType" -> {
@@ -114,9 +114,10 @@ public fun getSystemLang():String{
   val langCode: String = Locale.getDefault().getLanguage() as String
   return langCode
 }
-public fun getAppVersion():String {
-  val version:String = Build.VERSION.RELEASE
-  return version
+public fun getAppVersion(context: Context):String {
+  val versionName: String = context.getPackageManager()
+          .getPackageInfo(context.getPackageName(), 0).versionName
+  return versionName
 }
 
 fun getPhoneDeviceName():String {
