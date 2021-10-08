@@ -1,3 +1,6 @@
+## 0.0.5
+fixed kotlin package issues
+
 ## 0.0.4
 removed linter warnings and added auth header for backend, added more docu
 
