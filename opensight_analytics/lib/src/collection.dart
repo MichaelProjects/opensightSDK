@@ -3,7 +3,7 @@ import 'nativlayer.dart';
 
 class Collection {
   /// [Collection] contains all the needed data that will be sendet to the analtics_api.
-  final DateTime collectedTime = DateTime.now();
+  final DateTime collectedTime = DateTime.now().toUtc();
   String os;
   String deviceSize;
   bool newUser;
@@ -23,10 +23,14 @@ class Collection {
 
   /// [collect] calls all needed functions to get the needed data.
   static collect() async {
+    bool newUser = await PresistencesLayer().isNewUser();
+    if (newUser == true) {
+      PresistencesLayer().storeUserState(false);
+    }
     return Collection(
         os: await NativeLayer.determineOs(),
         deviceSize: await NativeLayer.determineDisplaysize(),
-        newUser: await PresistencesLayer().isNewUser(),
+        newUser: newUser,
         country: await NativeLayer.determineLangCode(),
         lastSession: await loadSessionData(),
         deviceType: await NativeLayer.determineDeviceType(),

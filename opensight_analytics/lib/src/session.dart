@@ -3,12 +3,14 @@ import 'dart:isolate';
 import '/src/persistence.dart';
 import 'package:flutter_isolate/flutter_isolate.dart';
 
+int trackIntervall = 5;
+
 class Session {
   /// [Session] is used to count teh session length and later add more features to it.
   int length = 0;
 
   void increaseLength() {
-    length += 10;
+    length += trackIntervall;
   }
 
   int store() {
@@ -16,11 +18,11 @@ class Session {
   }
 }
 
-/// writes every 10 seconds the count of length down.
+/// the [trackIntervall] in which distance the data will be written to the disk or storage
 startTracking(SendPort sendPort) async {
   var session = Session();
   while (true) {
-    await Future.delayed(const Duration(seconds: 10));
+    await Future.delayed(Duration(seconds: trackIntervall));
     session.increaseLength();
     await PresistencesLayer().storeSession(session);
   }

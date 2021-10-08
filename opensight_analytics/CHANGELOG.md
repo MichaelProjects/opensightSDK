@@ -1,3 +1,6 @@
+## 0.0.6
+timestamps are now utc, added tracking intervall
+
 ## 0.0.5
 fixed kotlin package issues
 
