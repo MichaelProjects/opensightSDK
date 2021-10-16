@@ -9,7 +9,7 @@ class AnalyticsApiClient {
     compressData(payload);
     try {
       Uri uri =
-          Uri.parse("${config.analyticsApi}/analytic/${config.appId}/entry");
+          Uri.parse("${config.analyticsApi}/analytic/${config.appId}/session");
       Map<String, String> headers = {
         "Content-Type": "application/json",
         "Authorization": "Bearer ${config.token}"
