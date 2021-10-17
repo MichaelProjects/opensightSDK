@@ -1,5 +1,5 @@
 # Opensight for Flutter
-
+[![codecov](https://codecov.io/gh/MichaelProjects/opensightSDK/branch/master/graph/badge.svg?token=36EP9PZJQ7)](https://codecov.io/gh/MichaelProjects/opensightSDK) [![analytics_sdk_flutter](https://github.com/MichaelProjects/opensightSDK/actions/workflows/tests.yaml/badge.svg?branch=master)](https://github.com/MichaelProjects/opensightSDK/actions/workflows/tests.yaml)
 ## Quickstart
 
 Move the generated config file from the Opensight Dashboard into the root folder of your app. Then add this code snipped to your app.
