@@ -1,4 +1,4 @@
 library opensightsdk_analytics;
 
-export './src/app.dart' show OpensightAnalytics;
-export './src/collection.dart' show Collection;
+export 'package:opensight_analytics/src/app.dart' show OpensightAnalytics;
+export 'package:opensight_analytics/src/collection.dart' show Collection;
