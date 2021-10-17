@@ -18,13 +18,13 @@ jobs:
           flutter-version: '2.0.5'
       - name: get packages
         run: flutter pub get
-        working-directory: analytics_flutter
+        working-directory: opensight_analytics
       - name: run tests
         run: flutter test --coverage
-        working-directory: analytics_flutter
+        working-directory: opensight_analytics
 
       - name: Upload coverage to Codecov
-        working-directory: analytics_flutter
+        working-directory: opensight_analytics
         uses: codecov/codecov-action@v2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
