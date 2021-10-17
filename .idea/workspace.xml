@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22d2cc35-5c18-499e-bb1f-3919c39a98d8" name="Changes" comment="" />
+    <list default="true" id="22d2cc35-5c18-499e-bb1f-3919c39a98d8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/analytics_sdk.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/analytics_sdk.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/opensight_analytics/test/collector_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/opensight_analytics/test/collector_test.dart" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,7 +32,7 @@
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_opened_file_path" value="F:/flutter/bin/cache/dart-sdk/bin" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -63,10 +67,10 @@
       <screen x="0" y="0" width="2560" height="1032" />
     </state>
     <state x="1619" y="271" key="FileChooserDialogImpl/0.0.2560.1032/2560.-446.1080.1872@0.0.2560.1032" timestamp="1632153111348" />
-    <state x="1340" y="161" width="998" height="708" key="SettingsEditor" timestamp="1632153139403">
+    <state x="1340" y="161" width="998" height="708" key="SettingsEditor" timestamp="1634491069380">
       <screen x="0" y="0" width="2560" height="1032" />
     </state>
-    <state x="1340" y="161" width="998" height="708" key="SettingsEditor/0.0.2560.1032/2560.-446.1080.1872@0.0.2560.1032" timestamp="1632153139403" />
+    <state x="1340" y="161" width="998" height="708" key="SettingsEditor/0.0.2560.1032/2560.-446.1080.1872@0.0.2560.1032" timestamp="1634491069380" />
     <state x="1656" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1632429073955">
       <screen x="0" y="0" width="2560" height="1032" />
     </state>

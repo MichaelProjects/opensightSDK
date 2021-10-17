@@ -9,6 +9,12 @@
       <excludeFolder url="file://$MODULE_DIR$/analytics_flutter/example/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/analytics_flutter/example/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/analytics_flutter/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/opensight_analytics/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/opensight_analytics/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/opensight_analytics/build" />
+      <excludeFolder url="file://$MODULE_DIR$/opensight_analytics/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/opensight_analytics/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/opensight_analytics/example/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
