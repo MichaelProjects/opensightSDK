@@ -1,6 +1,6 @@
 import 'dart:isolate';
 
-import '/src/persistence.dart';
+import 'persistence.dart';
 import 'package:flutter_isolate/flutter_isolate.dart';
 
 int trackIntervall = 5;
