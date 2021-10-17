@@ -24,10 +24,9 @@ jobs:
         working-directory: opensight_analytics
 
       - name: Upload coverage to Codecov
-        working-directory: opensight_analytics
         uses: codecov/codecov-action@v2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          files: coverage/Icov.info
+          files: opensight_analytics/coverage/Icov.info
           flags: test_analytic_flutter
   
