@@ -27,6 +27,6 @@ jobs:
         uses: codecov/codecov-action@v2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          files: opensight_analytics/coverage/Icov.info
+          directory: ./opensight_analytics/coverage/
           flags: test_analytic_flutter
   
