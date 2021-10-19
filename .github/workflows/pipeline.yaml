@@ -19,8 +19,6 @@ jobs:
         with:
           flutter-version: '2.5.1'
 
-      - name: analyze for errors or issues
-        run: dart analyze --fatal-infos
 
       - name: get packages
         run: flutter pub get
