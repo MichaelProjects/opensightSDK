@@ -31,7 +31,7 @@ jobs:
       
       - name: Build apk for Example Application
         run: flutter build apk
-        working-directory: opensight_analytics
+        working-directory: opensight_analytics/example
   
   code_coverage:  
     runs-on: ubuntu-latest
