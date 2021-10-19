@@ -24,20 +24,12 @@ jobs:
         run: flutter pub get
         working-directory: opensight_analytics
 
+
       - name: run tests
         run: flutter test --coverage
         working-directory: opensight_analytics
-  
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: subosito/flutter-action@v1
-        with:
-          flutter-version: '2.5.1'
-
-      - run: flutter pub get
-        working-directory: opensight_analytics
-      - name: Build apk with example
+      
+      - name: Build apk for Example Application
         run: flutter build apk
         working-directory: opensight_analytics
   
