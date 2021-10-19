@@ -36,6 +36,7 @@ jobs:
           flutter-version: '2.5.1'
 
       - run: flutter pub get
+        working-directory: opensight_analytics
       - name: Build apk with example
         run: flutter build apk
         working-directory: opensight_analytics
