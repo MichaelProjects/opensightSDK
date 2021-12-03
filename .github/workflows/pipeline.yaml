@@ -19,11 +19,9 @@ jobs:
         with:
           flutter-version: '2.5.1'
 
-
       - name: get packages
         run: flutter pub get
         working-directory: opensight_analytics
-
 
       - name: run tests
         run: flutter test --coverage

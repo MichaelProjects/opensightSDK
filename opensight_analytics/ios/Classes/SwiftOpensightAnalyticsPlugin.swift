@@ -2,12 +2,11 @@ import Flutter
 import UIKit
 
 public class SwiftOpensightAnalyticsPlugin: NSObject, FlutterPlugin {
-
+    
   public static func register(with registrar: FlutterPluginRegistrar) {
     let channel = FlutterMethodChannel(name: "io.opensight_analytics", binaryMessenger: registrar.messenger())
     let instance = SwiftOpensightAnalyticsPlugin()
-    registrar.addMethodCallDelegate(instance, channel: channel)
-  }
+    registrar.addMethodCallDelegate(instance, channel:
 
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         switch call.method {
